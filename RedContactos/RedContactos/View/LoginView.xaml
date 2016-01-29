@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RedContactos.View.LoginView"
+             Title="{Binding Titulo}">
+  <!--Relative: Permite colocar componentes a los margenes-->
+  <RelativeLayout>
+    <StackLayout Opacity="{Binding Opacity, Mode=TwoWay}"
+                 IsEnabled="{Binding Enabled, Mode=TwoWay}">
+      <Label Text="Login"></Label>
+      <Editor Text="{Binding Usuario.login}"></Editor>
+      <Label Text="Password"></Label>
+      <Editor Text="{Binding Usuario.password}"></Editor>
+      <Button Text="Enviar" Command="{Binding cmdLogin}"></Button>
+      <Button Text="Nuevo" Command="{Binding cmdAlta}"></Button>
+    </StackLayout>
+    <!--  -->
+    <ActivityIndicator IsVisible="{Binding IsBusy, Mode=TwoWay}"
+                       IsRunning="{Binding IsBusy, Mode=TwoWay}"
+                       VerticalOptions="CenterAndExpand"
+                       RelativeLayout.XConstraint="{ConstraintExpression 
+                                                    Type=RelativeToParent,
+                                                    Property=Height,Factor=0.30}"
+                       RelativeLayout.YConstraint="{ConstraintExpression
+                                                    Type=RelativeToParent,
+                                                    Property=Height,Factor=0.40}">
+    </ActivityIndicator>
+  </RelativeLayout>
+</ContentPage>
