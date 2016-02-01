@@ -6,7 +6,9 @@
   <!--Relative: Permite colocar componentes a los margenes-->
   <RelativeLayout>
     <StackLayout Opacity="{Binding Opacity, Mode=TwoWay}"
-                 IsEnabled="{Binding Enabled, Mode=TwoWay}">
+                 IsEnabled="{Binding Enabled, Mode=TwoWay}"
+                 VerticalOptions="FillAndExpand">
+      <Image Source="tuxFactory3.png" Aspect="Fill"></Image>
       <Label Text="Login"></Label>
       <Editor Text="{Binding Usuario.login}"></Editor>
       <Label Text="Password"></Label>

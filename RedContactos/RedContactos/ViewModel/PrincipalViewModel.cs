@@ -16,6 +16,7 @@ namespace RedContactos.ViewModel
     {
         public ICommand CmdContactos { get; set; }
         public ICommand CmdMensajes { get; set; }
+        public ICommand CmdSalir { get; set; }
         public IComponentContext Context { get; set; }
 
         public PrincipalViewModel(INavigator navigator, IServicioMovil servicio, IPage page,
@@ -24,6 +25,7 @@ namespace RedContactos.ViewModel
             Context = ctx;
             CmdContactos = new Command(RunContactos);
             CmdMensajes = new Command(RunMensajes);
+            CmdSalir = new Command(RunSalir);
         }
 
         public async void RunMensajes()
@@ -60,6 +62,13 @@ namespace RedContactos.ViewModel
                 viewModel.NoAmigos = oc;
                 viewModel.Titulo = "Mis contactos";
             });
+        }
+
+        public async void RunSalir()
+        {
+            Cadenas.Session["usuarios"] = null;
+            DependencyService.Get<IServicioFichero>().GuardarTexto("",Cadenas.FicheroSettings);
+            await _navigator.PopToRootAsync();
         }
     }
 }

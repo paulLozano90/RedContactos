@@ -18,10 +18,10 @@ namespace RedContactos.iOS.Servicios
 
         public string RecuperarTexto(string fichero)
         {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            var rutafinal = Path.Combine(path, fichero);
             try
             {
+                var path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                var rutafinal = Path.Combine(path, fichero);
                 return File.ReadAllText(rutafinal);
             }
             catch (Exception)

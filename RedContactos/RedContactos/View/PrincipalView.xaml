@@ -6,5 +6,6 @@
   <StackLayout>
     <Button Text="Contactos" Command="{Binding CmdContactos}"></Button>
     <Button Text="Mensajes" Command="{Binding CmdMensajes}"/>
+    <Button Text="Cerrar sesion" Command="{Binding CmdSalir}"/>
   </StackLayout>
 </ContentPage>
