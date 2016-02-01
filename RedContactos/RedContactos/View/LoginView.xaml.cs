@@ -13,7 +13,6 @@ namespace RedContactos.View
         public LoginView()
         {
             InitializeComponent();
-
         }
     }
 }

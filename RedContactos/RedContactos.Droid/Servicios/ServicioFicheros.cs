@@ -26,7 +26,7 @@ namespace RedContactos.Droid.Servicios
                 var rutafinal = Path.Combine(path, fichero);
                 return File.ReadAllText(rutafinal);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }

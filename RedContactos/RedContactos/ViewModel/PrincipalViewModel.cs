@@ -33,7 +33,6 @@ namespace RedContactos.ViewModel
             IsBusy = true;
             var yo = Cadenas.Session["usuario"] as UsuarioModel;
             var data = await _servicio.GetMensajes(yo.idUsuario);
-            var a = 2;
             await _navigator.PushAsync<MisMensajesViewModel>(viewModel =>
             {
                 viewModel.Mensajes = new ObservableCollection<MensajeModel>(data);

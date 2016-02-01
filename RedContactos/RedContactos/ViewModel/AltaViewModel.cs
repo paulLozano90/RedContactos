@@ -31,7 +31,6 @@ namespace RedContactos.ViewModel
         {
             var a = Usuario.login;
             var f = _usuario;
-            var y = "";
             try
             {
                 IsBusy = true;
