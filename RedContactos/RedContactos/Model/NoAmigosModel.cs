@@ -31,9 +31,10 @@ namespace RedContactos.Model
             var d = await vm._servicio.AddContacto(ContactoModel);
             if (d != null)
             {
-                await vm._page.MostrarAlerta("Exito", "Contacto añadido", "Ok");
-                vm.Amigos.Add(ContactoModel);
+                //vm.Amigos.Add(ContactoModel);
+                MessagingCenter.Send(ContactoModel,"AddContaco");
                 vm.NoAmigos.Remove(this);
+                await vm._page.MostrarAlerta("Exito", "Contacto añadido", "Ok");
             }
             else
                 await vm._page.MostrarAlerta("Error", "Contacto no añadido", "Ok");

@@ -7,7 +7,9 @@
             SelectedItem="{Binding MensajeSeleccionado, Mode=TwoWay}">
     <ListView.ItemTemplate>
       <DataTemplate>
-        <ImageCell ImageSource="mensaje.png">
+
+        <ViewCell>
+          <Image Source="mensaje.png"></Image>
           <StackLayout>
             <Label Text="{Binding asunto}"></Label>
             <StackLayout Orientation="Horizontal">
@@ -16,7 +18,7 @@
               <Label Text="{Binding Estado}"></Label>
             </StackLayout>
           </StackLayout>
-        </ImageCell>
+        </ViewCell>>
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>

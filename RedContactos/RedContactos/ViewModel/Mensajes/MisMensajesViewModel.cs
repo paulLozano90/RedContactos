@@ -29,7 +29,6 @@ namespace RedContactos.ViewModel.Mensajes
                 SetProperty(ref _mensajeSeleccionado, value);
                 if (value!=null)
                     VerDetailMensaje();
-                
             }
         }
 
